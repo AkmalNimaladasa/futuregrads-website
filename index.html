@@ -2,14 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Future Grads International Academy</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <script src="script.js" defer></script>
 </head>
 <body>
-
-  <!-- 🔹 NAVBAR -->
   <header>
     <nav>
       <div class="logo">Future Grads</div>
@@ -17,101 +15,42 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="#vision">Vision & Mission</a></li>
+        <li><a href="vision.html">Vision & Mission</a></li>
         <li><a href="training.html">Teacher Training</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- 🔹 HERO BANNER -->
-  <section class="hero" style="text-align: center;">
-    <h1>Future Grads International Academy</h1>
-    <p><em>Steps to Levels Higher</em></p>
-    <p>Enroll to begin the foundation of your child's life. <strong>From age 1.5 years</strong>.</p>
+  <section class="hero">
+    <h1>Welcome to Future Grads International Academy</h1>
+    <p>Where every child begins their journey to lifelong success.</p>
+    <a href="#contact" class="cta-button">Enroll Now</a>
   </section>
 
-  <!-- 🔹 WELCOME SECTION -->
-  <section>
-    <h2>🌐 Welcome</h2>
-    <p><strong>Welcome to Future Grads International Academy</strong> — where every child begins their journey to lifelong success.</p>
-    <p>For over 23 years, we’ve built strong, loving foundations that stay with our students long after they’ve grown.</p>
-    <p>From Montessori to international schooling, we nurture confident, compassionate, and curious learners — one step at a time.</p>
-    <p><em>Future Grads: Steps to Levels Higher.</em></p>
-  </section>
-
-  <!-- 🔹 VISION & MISSION -->
-  <section id="vision">
-    <h2>🎯 Vision & Mission</h2>
-
-    <h3>🌟 Vision</h3>
-    <p>To nurture a generation of confident, compassionate, and curious learners who carry the values and foundation of Future Grads International Academy into every stage of life — from childhood to adulthood.</p>
-
-    <h3>🎯 Mission</h3>
-    <ul>
-      <li>🌱 Build strong educational foundations through holistic, child-centered learning.</li>
-      <li>💛 Foster emotional intelligence, kindness, and respectful behavior in every child.</li>
-      <li>🏫 Create a home-like environment where children feel safe, seen, and supported.</li>
-      <li>📚 Equip children with the skills and values to thrive academically, socially, and spiritually.</li>
-    </ul>
-    <p>We aim not only to teach, but to transform lives — inspiring our students to return with gratitude, even years after graduation.</p>
-  </section>
-
-  <!-- 🔹 SERVICES -->
-  <section>
-    <h2>🏫 Our Services</h2>
-    <div class="service-boxes">
-      <div class="service">
-        <h3>Montessori</h3>
-        <p>Ages 1.5 to 5. A loving, structured environment using proven Montessori methods.</p>
-      </div>
-      <div class="service">
-        <h3>Daycare</h3>
-        <p>Open from 7am–7pm. Safe, supervised, and nurturing care for working parents.</p>
-      </div>
-      <div class="service">
-        <h3>International School (Coming 2027)</h3>
-        <p>International Grade 1 launching in January 2027 with a global, STEAM-integrated curriculum.</p>
-      </div>
-      <div class="service">
-        <h3>Teacher Training</h3>
-        <p>Certified Montessori and child psychology training by our founder. <a href="training.html">Learn more →</a></p>
-      </div>
+  <section id="highlights">
+    <h2>Why Choose Us</h2>
+    <div class="highlight-cards">
+      <div class="card">Safety</div>
+      <div class="card">Love</div>
+      <div class="card">Trained Teachers</div>
+      <div class="card">Cleanliness</div>
     </div>
   </section>
 
-  <!-- 🔹 WHY CHOOSE US -->
-  <section>
-    <h2>💛 Why Choose Us</h2>
-    <div class="service-boxes">
-      <div class="service"><h3>🛡️ Safety</h3><p>We prioritize child security and peace of mind for parents.</p></div>
-      <div class="service"><h3>❤️ Love</h3><p>Every child is treated with deep compassion and care.</p></div>
-      <div class="service"><h3>🎓 Trained Staff</h3><p>Certified, experienced educators and support staff.</p></div>
-      <div class="service"><h3>🧼 Cleanliness</h3><p>Daily sanitization routines ensure a hygienic environment.</p></div>
-    </div>
-  </section>
-
-  <!-- 🔹 CONTACT & INQUIRY FORM -->
   <section id="contact">
-    <h2>📩 Contact & Inquiry</h2>
-    <p>Phone / WhatsApp: <a href="https://wa.me/94777579821" target="_blank">+94 777 579 821</a></p>
-    <p>Email: <a href="mailto:futuregrads@gmail.com">futuregrads@gmail.com</a></p>
-    <p>Visit: <a href="https://www.google.com/maps?q=23+Rawatawatta+Rd,+Moratuwa+10400" target="_blank">23 Rawatawatta Rd, Moratuwa</a></p>
-
-    <form name="contactForm" onsubmit="return validateForm()" action="https://script.google.com/macros/s/your-google-script-id/exec" method="POST">
+    <h2>Contact Us</h2>
+    <form name="contactForm" onsubmit="return validateForm()">
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />
       <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Inquiry</button>
+      <button type="submit">Send</button>
     </form>
-    <p>You'll be contacted shortly via WhatsApp or email.</p>
+    <p>Or WhatsApp us directly: <a href="https://wa.me/94777579821">+94 777 579 821</a></p>
   </section>
 
-  <!-- 🔹 FOOTER -->
   <footer>
     <p>© 2025 Future Grads International Academy. All rights reserved.</p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>

@@ -1,30 +1,36 @@
-// Scroll animation
-window.addEventListener("scroll", function () {
-  const sections = document.querySelectorAll("section");
-  sections.forEach((section) => {
-    const rect = section.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 100) {
-      section.classList.add("visible");
-    }
-  });
-});
-
-// Form validation (for contact form with name, email, message)
+// ✅ Basic JavaScript Form Validation
 function validateForm() {
-  const name = document.forms["contactForm"]["name"].value;
-  const email = document.forms["contactForm"]["email"].value;
-  const message = document.forms["contactForm"]["message"].value;
+  const form = document.forms["contactForm"];
+  const name = form["name"].value.trim();
+  const email = form["email"].value.trim();
+  const message = form["message"].value.trim();
 
-  if (name.trim() === "" || email.trim() === "" || message.trim() === "") {
+  if (!name || !email || !message) {
     alert("Please fill in all fields.");
     return false;
   }
 
-  const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-  if (!emailPattern.test(email)) {
+  // Simple email validation
+  const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+  if (!emailRegex.test(email)) {
     alert("Please enter a valid email address.");
     return false;
   }
 
+  alert("Thank you! Your message has been sent.");
   return true;
 }
+
+// ✅ Smooth Scroll for Internal Links
+document.addEventListener("DOMContentLoaded", () => {
+  const links = document.querySelectorAll("a[href^='#']");
+  for (let link of links) {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute("href"));
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  }
+});
