@@ -1,44 +1,30 @@
-// ✅ FORM VALIDATION + WHATSAPP LINK
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("contactForm");
-  const confirmation = document.getElementById("confirmation");
-
-  form.addEventListener("submit", function (e) {
-    const name = form.name.value.trim();
-    const email = form.email.value.trim();
-    const childAge = form.child_age.value.trim();
-    const type = form.type.value;
-    const message = form.message.value.trim();
-
-    if (!name || !email || !childAge || !type || !message) {
-      alert("Please fill in all fields.");
-      e.preventDefault();
-      return;
-    }
-
-    // ✅ Show confirmation message
-    confirmation.classList.remove("hidden");
-
-    // ✅ WhatsApp redirect (simulate message to admin)
-    const adminPhone = "94777579821";
-    const waMessage = `New ${type} from ${name}%0AChild Age: ${childAge}%0AContact: ${email}%0AMessage: ${message}`;
-    window.open(`https://wa.me/${adminPhone}?text=${waMessage}`, "_blank");
-  });
-
-  // ✅ Animate sections on scroll
+// Scroll animation
+window.addEventListener("scroll", function () {
   const sections = document.querySelectorAll("section");
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("fade-in");
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2 });
-
-  sections.forEach(section => {
-    section.classList.add("hidden-section");
-    observer.observe(section);
+  sections.forEach((section) => {
+    const rect = section.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) {
+      section.classList.add("visible");
+    }
   });
 });
+
+// Form validation (for contact form with name, email, message)
+function validateForm() {
+  const name = document.forms["contactForm"]["name"].value;
+  const email = document.forms["contactForm"]["email"].value;
+  const message = document.forms["contactForm"]["message"].value;
+
+  if (name.trim() === "" || email.trim() === "" || message.trim() === "") {
+    alert("Please fill in all fields.");
+    return false;
+  }
+
+  const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  if (!emailPattern.test(email)) {
+    alert("Please enter a valid email address.");
+    return false;
+  }
+
+  return true;
+}
